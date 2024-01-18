@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d = $AnimatedSprite2D
 export var speed = 300
 
 func _process(delta):
-	pass
+	if Input.is_action_pressed("shoot"):
+		animated_sprite_2d.animation = "shoot"
+		
 
 func _physics_process(delta):
 	var direction = Vector2()
